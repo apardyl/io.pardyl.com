@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="Our approach chooses the most informative observations by reusing the
+                        internal uncertainty coded in the attention maps. In contrast to existing methods, it does not
+                        require any auxiliary loss functions dedicated to active exploration. Therefore, the training
+                        concentrates on the target task loss, not on an auxiliary loss, which improves overall
+                        performance.">
+    <meta property="og:title" content="Active Visual Exploration Based on Attention-Map Entropy"/>
+    <meta property="og:description" content="Our approach chooses the most informative observations by reusing the
+                        internal uncertainty coded in the attention maps. In contrast to existing methods, it does not
+                        require any auxiliary loss functions dedicated to active exploration. Therefore, the training
+                        concentrates on the target task loss, not on an auxiliary loss, which improves overall
+                        performance."/>
+    <!--  <meta property="og:url" content="URL OF THE WEBSITE"/>-->
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <!--  <meta property="og:image" content="static/image/your_banner_image.png" />-->
+    <!--  <meta property="og:image:width" content="1200"/>-->
+    <!--  <meta property="og:image:height" content="630"/>-->
+
+
+    <meta name="twitter:title" content="Active Visual Exploration Based on Attention-Map Entropy">
+    <!--  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">-->
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <!--  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">-->
+    <!--  <meta name="twitter:card" content="summary_large_image">-->
+    <!-- Keywords for your paper to be indexed by-->
+    <!--  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Active Visual Exploration Based on Attention-Map Entropy</title>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Active Visual Exploration Based on Attention-Map
+                        Entropy</h1>
+                    <div class="is-size-5 publication-authors">
+                        <!-- Paper authors -->
+                        <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=vszbX_0AAAAJ&hl=pl"
+                   target="_blank">Adam Pardyl</a><sup>1,2</sup>,</span>
+                        <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=XE3QOZ4AAAAJ&hl=pl"
+                     target="_blank">Grzegorz Rypeść</a><sup>1,3</sup>,</span>
+                        <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=QyBoXsQAAAAJ&hl=pl" target="_blank">Grzegorz Kurzejamski</a><sup>1</sup>,
+                  </span>
+                        <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=AJHaOpkAAAAJ&hl=pl" target="_blank">Bartosz Zieliński</a><sup>1,2,5</sup>,
+                  </span>
+                        <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=bJMRBFoAAAAJ&hl=pl" target="_blank">Tomasz Trzciński</a><sup>1,2,3,4</sup>
+                  </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <sup>1</sup>IDEAS NCBR,<br>
+                      <sup>2</sup>Jagiellonian University,
+                      <sup>3</sup>Warsaw University of Technology,<br>
+                      <sup>4</sup>Tooploox,
+                      <sup>6</sup>Ardigen<br>
+                      IJCAI 2023</span>
+                    </div>
+
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- poster PDF link -->
+                            <span class="link-block">
+                        <a href="static/pdfs/poster_ijcai_ame.pdf" target="_blank"
+                           class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-window-maximize"></i>
+                        </span>
+                        <span>Poster</span>
+                      </a>
+                    </span>
+
+
+                            <!-- Arxiv PDF link -->
+                            <span class="link-block">
+                        <a href="static/pdfs/Glimpse_1.pdf" target="_blank"
+                           class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                            <!-- Supplementary PDF link -->
+                            <span class="link-block">
+                      <a href="static/pdfs/supplementary.pdf" target="_blank"
+                         class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                            <!-- Github link -->
+                            <span class="link-block">
+                    <a href="https://github.com/apardyl/AME" target="_blank"
+                       class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Youtube video -->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="publication-video">
+                        <!-- Youtube embed code here -->
+                        <iframe src="https://www.youtube.com/embed/OouwXR3DSsk" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <h2 class="subtitle has-text-centered">
+                Intelligently explore the environment visually just like humans do, based on internal model uncertainty.
+            </h2>
+        </div>
+    </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Active visual exploration addresses the issue of limited sensor capabilities in real-world
+                        scenarios, where successive observations are actively chosen based on the environment. To
+                        tackle this problem, we introduce a new technique called Attention-Map Entropy (AME). It
+                        leverages the internal uncertainty of the transformer-based model to determine the most
+                        informative observations. In contrast to existing solutions, it does not require additional loss
+                        components, which simplifies the training. Through experiments, which also mimic retina-like
+                        sensors, we show that such simplified training significantly improves the performance of
+                        reconstruction, segmentation and classification on publicly available datasets.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <h2 class="title">Visual exploration - human versus AI</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- Your image here -->
+                    <img src="static/images/ave.png" alt="visual exploration - human vs. AI" class="my-5"/>
+                    <p class="has-text-left">Humans naturally visually explore surrounding environment, using already
+                        observed areas as clues
+                        to where the wanted object can be located. At the same time, common state-of-the-art artificial
+                        intelligence solutions analyze all available data, which is inefficient and waste time and
+                        computational resources. In this project, we introduce a novel Active Visual Exploration method,
+                        enabling AI agents to efficiently explore their environment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <h2 class="title">Attention-Map Entropy (AME)</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- Your image here -->
+                    <img src="static/images/teaser.png" alt="" class="my-5"/>
+                    <p class="has-text-left">Our approach chooses the most informative observations by reusing the
+                        internal uncertainty coded in the attention maps. In contrast to existing methods, it does not
+                        require any auxiliary loss functions dedicated to active exploration. Therefore, the training
+                        concentrates on the target task loss, not on an auxiliary loss, which improves overall
+                        performance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <h2 class="title">Architecture</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- Your image here -->
+                    <img src="static/images/architecture.png" alt="" class="my-5"/>
+                    <p class="has-text-left">The agent observed two patches of the image, which are processed by the
+                        encoder to produce their feature representations (orange rectangles). These outputs are combined
+                        with the masked patches (shown as gray rectangles) and passed through the decoder. The decoder
+                        reconstructs the missing image patches. Additionally, our method generates the entropy map for
+                        one of the decoder's multi-head self-attention layers and uses it to select the location of the
+                        third glimpse. The process repeats till we reach the assumed number of glimpses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <h2 class="title">Entropy map</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- Your image here -->
+                    <img src="static/images/shannon.png" alt="" class="my-5"/>
+                    <p class="has-text-left">To explain the idea of the entropy map based on attention
+                        in the transformer layer, let us consider an image divided into four patches (2 × 2) on
+                        the left. Its attention map will be a 4 × 4 matrix, where each row represents the
+                        attention weights used to calculate the output in the next transformer layer for a
+                        corresponding patch. Calculating Shannon’s entropy for each row will result in a
+                        2 × 2 entropy map. The patch with the highest entropy value is selected as the next
+                        glimpse.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <h2 class="title">Active visual exploration example</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- Your image here -->
+                    <img src="static/images/steps.png" alt="" class="my-5"/>
+                    <p class="has-text-left">The figure shows a glimpse selection process based on AME for 8 × 322
+                        glimpses for a sample 256 × 128 image. The rows
+                        correspond to a) step number, b) model input (glimpses), c) model prediction given, d) decoder
+                        attention entropy (known areas are explicitly set to zero). The algorithm explores
+                        the image in places where the reconstruction result is blurry.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <h2 class="title">Results</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- Your image here -->
+                    <img src="static/images/results.png" alt="" class="my-5"/>
+                    <p class="has-text-left">Comparison of our model in reconstruction task
+                        against AttSeg, GlAtEx and SimGlim on SUN360, ADE20K and
+                        MS COCO [3] datasets. The metric used is a root mean square error (RMSE; lower
+                        is better). For each experiment, we provide a training and evaluation regime defined
+                        by a number of glimpses of a specific resolution. Pixel % and area % denote
+                        respectively: the percentage of image pixels known to the model and the
+                        percentage of image area seen by the model. Differences in both measures occur
+                        when dealing with retina-like glimpses, which have lower pixel counts by design.
+                        Our method outperforms competitive solutions in all configurations.</p>
+
+                    <p class="has-text-left mt-3">See the paper for results on segmentation and classification
+                        tasks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <h2 class="title">More examples</h2>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="static/images/reconstruction1.png" alt="MY ALT TEXT"/>
+                    <h2 class="subtitle has-text-centered">
+                        Glimpse-based reconstruction step-by-step on MS COCO: The figure shows a glimpse selection
+                        process based on AME for
+                        37 × 16<sup>2</sup>
+                        glimpses for a sample 224 × 224 image. The rows correspond to A) step number, B) model input
+                        (glimpses), C) model prediction
+                        given, D) decoder attention entropy (known areas are explicitly set to zero).
+                    </h2>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="static/images/reconstruction2.png" alt="MY ALT TEXT"/>
+                    <h2 class="subtitle has-text-centered">
+                        Glimpse-based reconstruction step-by-step on ADE20K: The figure shows a glimpse selection
+                        process based on AME for
+                        37 × 16<sup>2</sup>
+                        glimpses for a sample 224 × 224 image. The rows correspond to A) step number, B) model input
+                        (glimpses), C) model prediction
+                        given, D) decoder attention entropy (known areas are explicitly set to zero).
+                    </h2>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="static/images/reconstruction3.png" alt="MY ALT TEXT"/>
+                    <h2 class="subtitle has-text-centered">
+                        Glimpse-based reconstruction step-by-step on ADE20K: The figure shows a glimpse selection
+                        process based on AME for 8×32<sup>2</sup>
+                        glimpses for a sample 256 × 128 image. The rows correspond to A) step number, B) model input
+                        (glimpses), C) model prediction given, D)
+                        decoder attention entropy (known areas are explicitly set to zero).
+                    </h2>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="static/images/reconstruction4.png" alt="MY ALT TEXT"/>
+                    <h2 class="subtitle has-text-centered">
+                        Glimpse-based reconstruction step-by-step on MS COCO: The figure shows a glimpse selection
+                        process based on AME for
+                        8 × 32<sup>2</sup>
+                        glimpses for a sample 256 × 128 image. The rows correspond to A) step number, B) model input
+                        (glimpses), C) model prediction
+                        given, D) decoder attention entropy (known areas are explicitly set to zero).
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- poster PDF link -->
+
+
+                            <!-- Arxiv PDF link -->
+                            <span class="link-block">
+                        <a href="static/pdfs/Glimpse_1.pdf" target="_blank"
+                           class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Read the paper</span>
+                      </a>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{pardyl2023active,
+  title={Active Visual Exploration Based on Attention-Map Entropy},
+  author={Pardyl, Adam and Rype{\'s}{\'c}, Grzegorz and Kurzejamski,
+            Grzegorz and Zieli{\'n}ski, Bartosz and Trzci{\'n}ski, Tomasz},
+  booktitle={Proceedings of the 32nd International Joint Conference on Artificial Intelligence},
+  year={2023}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+
+                    <p>
+                        This page was built using the <a
+                            href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                        Project Page Template</a>.
+                        You are free to borrow the of this website, we just ask that you link back to this page in the
+                        footer. <br> This website is licensed under a <a rel="license"
+                                                                         href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                                                         target="_blank">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
